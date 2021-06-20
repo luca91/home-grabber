@@ -2,14 +2,15 @@
 
 
 
-$isproduction=true;
+$isproduction=false ;
 
 
 $WEB_SERVER_BASE="http://localhost";
 $dbhost="localhost";
+$dbport=3306;
 $dbuser="root";
-$dbpass="";
-$dbname="grabber_case";
+$dbpass="root";
+$dbname="homegrabber";
 if($isproduction){//
     $dbhost="";
     $dbuser="";
@@ -135,8 +136,13 @@ $map_url=$WEB_SERVER_BASE."/homegrabber/homegrabber_map.php?mindim=".@$_GET['min
 $date = new DateTime('now'); 
 $todaystr=$date->format('Y-m-d h:i');
 
-
-$conn = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
+$dbDsn = "mysql:host={$dbhost};dbname={$dbname};dbport={$dbport}";
+$conn = null;
+try {
+	$conn = new \PDO($dbDsn, $dbuser, $dbpass);
+} catch (\Exception $e) {
+	die();
+}
  
 if ($conn->connect_errno) {
     echo "Db conn Error: " . $conn->connect_error;

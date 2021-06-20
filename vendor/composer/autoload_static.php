@@ -6,17 +6,82 @@ namespace Composer\Autoload;
 
 class ComposerStaticInitfe0c31a794c505c9d1959a93a1a44200
 {
+    public static $files = array (
+        '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
+        '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
+        '2a3c2110e8e0295330dc3d11a4cbc4cb' => __DIR__ . '/..' . '/php-webdriver/webdriver/lib/Exception/TimeoutException.php',
+    );
+
     public static $prefixLengthsPsr4 = array (
-        'C' => 
+        'S' => 
         array (
-            'ClanCats\\Hydrahon\\' => 18,
+            'Symfony\\Polyfill\\Mbstring\\' => 26,
+            'Symfony\\Polyfill\\Ctype\\' => 23,
+            'Symfony\\Component\\Process\\' => 26,
+            'Symfony\\Component\\DomCrawler\\' => 29,
+            'Symfony\\Component\\CssSelector\\' => 30,
+        ),
+        'F' => 
+        array (
+            'Facebook\\WebDriver\\' => 19,
+        ),
+        'B' => 
+        array (
+            'Behat\\Mink\\Driver\\' => 18,
+            'Behat\\Mink\\' => 11,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'ClanCats\\Hydrahon\\' => 
+        'Symfony\\Polyfill\\Mbstring\\' => 
         array (
-            0 => __DIR__ . '/..' . '/clancats/hydrahon/src',
+            0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
+        ),
+        'Symfony\\Polyfill\\Ctype\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
+        ),
+        'Symfony\\Component\\Process\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/process',
+        ),
+        'Symfony\\Component\\DomCrawler\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/dom-crawler',
+        ),
+        'Symfony\\Component\\CssSelector\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/css-selector',
+        ),
+        'Facebook\\WebDriver\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/php-webdriver/webdriver/lib',
+        ),
+        'Behat\\Mink\\Driver\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/behat/mink-selenium-driver/src',
+            1 => __DIR__ . '/..' . '/behat/mink-selenium2-driver/src',
+        ),
+        'Behat\\Mink\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/behat/mink/src',
+        ),
+    );
+
+    public static $prefixesPsr0 = array (
+        'W' => 
+        array (
+            'WebDriver' => 
+            array (
+                0 => __DIR__ . '/..' . '/instaclick/php-webdriver/lib',
+            ),
+        ),
+        'S' => 
+        array (
+            'Selenium' => 
+            array (
+                0 => __DIR__ . '/..' . '/alexandresalome/php-selenium/src',
+            ),
         ),
     );
 
@@ -25,6 +90,7 @@ class ComposerStaticInitfe0c31a794c505c9d1959a93a1a44200
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInitfe0c31a794c505c9d1959a93a1a44200::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInitfe0c31a794c505c9d1959a93a1a44200::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInitfe0c31a794c505c9d1959a93a1a44200::$prefixesPsr0;
 
         }, null, ClassLoader::class);
     }
